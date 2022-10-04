@@ -1,0 +1,265 @@
+/*---------- ChecklisComp ----------*/
+.checklist {
+    width: 100%;
+    gap: 1rem;
+    margin-bottom: 16px;
+    align-items: center;
+}
+
+.list-lastchild {
+    margin-bottom: 0;
+}
+
+.check-circle {
+    background-color: var(--c-primary-darkblue-01);
+    width: 1.5rem; /*24px*/
+    height: 1.5rem;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.check-pic {
+    display: block;
+    margin: 0 auto;
+}
+
+.checklist p {
+    margin-bottom: 0;
+}
+
+/*---------- LandingPageComp ----------*/
+.site-container {
+    height: 100%;;
+    width: 100%;
+    max-width: 75.5rem; /*1208px*/
+    margin: 0 auto;
+  }
+  
+/** #our_services **/
+#our_services {
+    padding: 30px 0;
+}
+
+.service-pic {
+    width: 100%;
+    padding-bottom: 24px;  
+}
+
+#service-img {
+    display: block;
+    width: 67.92%;
+    max-width: 28.688rem; /*459px*/
+    position: relative;
+    left: 15%;
+}
+
+.service-text {
+    padding: 0 16px;
+}
+
+/** #why_us**/
+#why_us {
+    padding: 20px 16px 30px;
+    text-align: center;
+}
+
+.why-card_container {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 8px;
+    gap: 16px;
+    text-align: start;
+}
+
+.why-card {
+    border: 1px solid var(--c-neutral-02);
+    border-radius: 0.5rem;
+}
+.why-card_icon {
+    width: 32px;
+    margin-bottom: 16px;
+}
+
+.card-title {
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+@media screen and (min-width: 590px){
+    .why-card_container {
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .why-card {
+        display: flex;
+        flex-direction: column;
+        width: calc((100% - 16px) / 2);
+        height: auto;
+    }
+
+    .why-card_text {
+        flex: 1 1 auto;
+        height: 100%;
+    }
+}
+
+@media screen and (min-width: 850px){
+    .why-card {
+        flex: 1 0 0;
+        max-width: 26.8rem;
+    }
+}
+
+/** #testimonial **/
+#testimonial {
+    width: 100%;
+    padding: 30px 0;
+    text-align: center;
+}
+
+/** #rent_now **/
+#rent_now {
+    padding: 30px 16px;
+}
+
+.jumbocard {
+    background-color: var(--c-primary-darkblue-04);
+    padding: 4rem 3.625rem; /*64px 58px*/
+    border-radius: 13px;
+    justify-content: center;
+    text-align: center;
+}
+
+.jumbocard h2, .jumbocard .desc {
+    color: #fff;
+}
+
+.jumbocard h2 {
+    font-size: 2.25rem; /*36px*/
+}
+
+.jumbocard .mulai-sewa {
+    margin: 8px auto 0px;
+}
+/** #faq **/
+#faq {
+    width: 100%;
+    padding: 30px 0;
+}
+
+.answer-text {
+    padding: 0 16px;
+    text-align: center;
+}
+
+.answer-text p {
+    margin-bottom: 4px;
+}
+
+.answer-column {
+    padding: 0 16px;
+    justify-content: end;
+}
+
+.dropdown_container {
+    width: 100%;
+    gap: 16px;
+}
+
+.dropdown-question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 25px 16px 24px;
+    background-color: #fff;
+    color: #000;
+    font-weight: 700;
+    font-size: 1em;
+    line-height: 1.42857;
+    border: 1px solid #D4D4D4;
+    border-radius: 0.25rem;
+}
+
+.dropdown-question::after {
+    display: none;    
+}
+
+.dropdown-question:hover .dropdown-icon {
+    filter: saturate(0%) brightness(1000%);
+}
+
+.dropdown-icon {
+    width: 12px;
+    height: 6px;;
+}
+
+.dropdown-answer {
+    font-size: 1em;
+    border: 1px solid var(--c-neutral-03);
+    border-radius: 0.25rem;
+    background-color: var(--c-neutral-blue);
+}
+
+/** DESKTOP STYLES **/
+@media screen and (min-width: 768px){
+    .service-pic_container {
+        justify-content: center;
+    }
+
+    .service-pic {
+        padding: 0;
+    }
+
+    #service-img {
+        width: 76%;
+        left: 11.59%;
+    }
+
+    .service-text_container {
+        justify-content: center;
+    }
+
+    .service-text {
+        max-width: 31.25rem; /*500px*/
+        margin: 0 auto;
+    }
+
+    #why_us {
+        text-align: start;
+        padding: 20px 20px 30px;
+    }
+
+    .testimonial-text p {
+        margin-bottom: 40px
+    }
+
+    #rent_now {
+        padding: 30px 20px;
+    }
+
+    .answer-text, .answer-column {
+        padding: 0 20px;
+        text-align: start;
+    }
+    
+    .dropdown_container {
+        max-width: 41.75rem; /*668px*/
+    }
+
+    .dropdown-question {
+        padding-top: 18px;
+        padding-bottom: 18px;
+    }
+  }
+
+  .blue-square-test {
+    width: 32px;
+    height: 32px;
+    background-color: var(--c-primary-darkblue-04);
+  }

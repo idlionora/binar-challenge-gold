@@ -1,0 +1,170 @@
+/*---------- CarouselComp ----------*/
+.carousel_container {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 2.8rem;
+}
+
+.carousel_frame {
+    width: 100%;
+    height: 24.4275rem; /*391px*/
+    justify-content: center;
+    position: relative;
+}
+
+.carousel-slide {
+    width: 100%;
+    max-width: 25rem; /*400px*/
+    height: 100%;
+    position: relative;
+    transition: transform 500ms ease-out;
+}
+
+.slide-margin {
+    position: absolute;
+    padding: 0 16px;
+    width: 100%;
+    height: 100%;
+}
+
+.slide-card {
+    background-color: var(--c-neutral-blue);
+    width: 100%;
+    height: 100%;
+    border-radius: .5rem;
+    padding: 10px 32px;
+    align-items: center;
+}
+
+.testimony_container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.testimony-pic {
+    flex-grow: 0;
+    width: 5rem;
+    margin-bottom: 24px;
+}
+
+.testimony-rating {
+    width: fit-content;
+    margin: 0 auto 24px;
+}
+
+.img-star {
+    display: block;
+    width: 16px;
+    height: 16px;
+}
+
+.testimony-desc {
+    margin-bottom: 8px;
+    width: 100%;
+    max-width: 30rem;
+}
+
+.testimony-name {
+    font-weight: 400;
+}
+
+.carousel_buttons {
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    margin-top: -4px;
+}
+
+.carousel-button {
+    background-color: #fff;
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid #C4C4C4;
+    border-radius: 50%;
+    margin: 0 12px;
+    display: flex;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.button-right .arrow-filter {
+    transform: rotate(180deg)
+}
+
+.carousel-button:hover {
+    background-color: var(--c-primary-limegreen-04);
+    border: none;
+}
+
+.carousel-button:hover .arrow-filter {
+    filter:saturate(0%) brightness(1000%);
+}
+
+.carousel-button:active {
+    background-color: var(--c-primary-limegreen-03);
+}
+
+.carousel-button.disable {
+    background-color: var(--c-neutral-02);
+    cursor: auto;
+    border: none;
+}
+
+.carousel-button.disable:hover .arrow-filter {
+    filter: none;
+}
+
+/** DESKTOP STYLES **/
+@media screen and (min-width: 768px){
+    .carousel_container {
+        margin-bottom: 30px;
+    }
+    
+    .carousel_frame {
+        height: 16.875rem; /*270px*/
+    }
+
+    .carousel-slide {
+        max-width: 38.75rem; /*620px*/
+        transition: transform 690ms ease-out;
+    }
+
+    .carousel-card {
+        padding: 10px 32px 10px 46px;
+    }
+
+    .testimony_container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .testimony-pic {
+        margin-bottom: 0;
+        margin-right: 46px;
+    }
+
+    .testimony_right-tab {
+        text-align: left;
+    }
+
+    .testimony-rating {
+        margin: 0;
+        margin-bottom: 8px;
+    }
+
+    .testimony-desc {
+        max-width: 100%;
+    }
+
+    .carousel_buttons {
+        position: relative;
+        margin: 0;
+        margin-top: 24px;
+    }
+
+
+}
