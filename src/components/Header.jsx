@@ -1,6 +1,6 @@
 import {useState} from "react";
 import Button from 'react-bootstrap/Button';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import './Header.css';
 
 const HamburgerMenuComp = () => {
@@ -61,7 +61,7 @@ export const NavbarComp = () => {
         <HamburgerMenuComp />
         <nav className="site-nav flex">
             <Link to="#" className="logo-link">
-                <div className="logo-img"></div>
+                <div className="logo-img" title="Binar Car Rental"></div>
             </Link>
             <ul className="nav-container flex hide-for-mobile">
                 <li><Link to="/#our_services" className="nav-link">Our Services</Link></li>
@@ -75,16 +75,18 @@ export const NavbarComp = () => {
 }
 
 export const BannerComp = (props) => {
+    const navigate = useNavigate();
     return (
         <div className="banner grid">
-            <div className="banner-text">
+            <div className={`banner-text ${props.noButton && "search-page-pb"}`}>
                 <h1>Sewa & Rental Mobil Terbaik di kawasan (Lokasimu)</h1>
                 <p>Selamat datang di Binar Car Rental. Kami menyediakan mobil kualitas terbaik dengan harga terjangkau. Selalu siap melayani kebutuhanmu untuk sewa mobil selama 24 jam.</p>
-                <Button className={`mulai-sewa green-button ${props.noButton && "no-button"}`}>Mulai Sewa Mobil</Button>
+                <Button className={`mulai-sewa green-button ${props.noButton && "no-button"}`} 
+                onClick={() => {navigate("/cari-mobil")}}>Mulai Sewa Mobil</Button>
             </div>
             <div className="banner-pic">
                 <div className="blue-block">
-                    <div className="car-pic_space"></div>
+                    <div className={`car-pic_space ${props.noButton && "search-page-pb"}`}></div>
                     <div className="car-pic_container">
                         <div className="blue-curve"></div>
                         <img src={require("../assets/Mercedes Car EQC 300kW Edition - 900x598.png")} alt="Mercedes Car" id="banner-car" />

@@ -1,41 +1,4 @@
-/*---------- ChecklisComp ----------*/
-.checklist {
-    width: 100%;
-    gap: 1rem;
-    margin-bottom: 16px;
-    align-items: center;
-}
-
-.list-lastchild {
-    margin-bottom: 0;
-}
-
-.check-circle {
-    background-color: var(--c-primary-darkblue-01);
-    width: 1.5rem; /*24px*/
-    height: 1.5rem;
-    border-radius: 50%;
-    justify-content: center;
-    align-items: center;
-}
-
-.check-pic {
-    display: block;
-    margin: 0 auto;
-}
-
-.checklist p {
-    margin-bottom: 0;
-}
-
-/*---------- LandingPageComp ----------*/
-.site-container {
-    height: 100%;;
-    width: 100%;
-    max-width: 75.5rem; /*1208px*/
-    margin: 0 auto;
-  }
-  
+/*---------- LandingPageComp ----------*/ 
 /** #our_services **/
 #our_services {
     padding: 30px 0;
@@ -56,6 +19,34 @@
 
 .service-text {
     padding: 0 16px;
+}
+
+.checklist_container {
+    gap: 16px;    
+}
+
+.checklist {
+    width: 100%;
+    gap: 1rem;
+    align-items: center;
+}
+
+.check-circle {
+    background-color: var(--c-primary-darkblue-01);
+    width: 1.5rem; /*24px*/
+    height: 1.5rem;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.check-pic {
+    display: block;
+    margin: 0 auto;
+}
+
+.checklist p {
+    margin-bottom: 0;
 }
 
 /** #why_us**/

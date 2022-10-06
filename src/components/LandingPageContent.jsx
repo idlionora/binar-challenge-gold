@@ -7,11 +7,12 @@ import Dropdown from 'react-bootstrap/Dropdown';
 const iconDropdown = require("../assets/dropdown.png")
 import './LandingPageContent.css';
 import { CarouselComp } from "./Carousel";
+import { useNavigate } from 'react-router-dom';
 
 
 const ChecklistComp = (props) => {
     return (
-        <div className={`checklist flex ${props.lastChild && "list-lastchild"}`}>
+        <div className="checklist flex">
             <div className="check-circle flex">
                 <img src={require("../assets/checklist.png")} alt="Checklist" className="check-pic" /> 
             </div>
@@ -42,7 +43,7 @@ const DropdownComp = (props) => {
         <Dropdown>
             <Dropdown.Toggle className="dropdown-question">
                 {props.title}
-                <img src={iconDropdown} className="dropdown-icon"/>
+                <img src={iconDropdown} className="dropdown-icon" alt="dropdown"/>
             </Dropdown.Toggle>
             <Dropdown.Menu className="dropdown-answer">
                 <Dropdown.ItemText>
@@ -54,6 +55,7 @@ const DropdownComp = (props) => {
 }
 
 export const LandingPageComp = () => {
+    const navigate = useNavigate();
     return (
         <>
         <Container fluid className="site-container p-0">
@@ -67,12 +69,12 @@ export const LandingPageComp = () => {
                     <div className="service-text">
                         <h2>Best Car Rental for any kind of trip in (Lokasimu)!</h2>
                         <p className="desc">Sewa mobil di (Lokasimu) bersama Binar Car Rental jaminan harga lebih murah dibandingkan yang lain, kondisi mobil baru, serta kualitas pelayanan terbaik untuk perjalanan wisata, bisnis, wedding, meeting, dll.</p>
-                        <div className="checklist_container">
+                        <div className="checklist_container flex-column">
                             <ChecklistComp content="Sewa Mobil Dengan Supir di Bali 12 Jam"/>
                             <ChecklistComp content="Sewa Mobil Lepas Kunci di Bali 24 Jam"/>
                             <ChecklistComp content="Sewa Mobil Jangka Panjang Bulanan"/>
                             <ChecklistComp content="Gratis Antar - Jemput Mobil di Bandara"/>
-                            <ChecklistComp content="Layanan Airport Transfer / Drop In Out" lastChild/>
+                            <ChecklistComp content="Layanan Airport Transfer / Drop In Out"/>
                         </div>
                     </div>
                 </Col>
@@ -104,7 +106,8 @@ export const LandingPageComp = () => {
                 <div className="jumbocard flex-column">
                     <h2>Sewa Mobil di (Lokasimu) Sekarang</h2>
                     <p className="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <Button className="mulai-sewa green-button">Mulai Sewa Mobil</Button>
+                    <Button className="mulai-sewa green-button"
+                    onClick={()=>{navigate("/cari-mobil")}}>Mulai Sewa Mobil</Button>
                 </div>
             </Row>
             <Row id="faq">

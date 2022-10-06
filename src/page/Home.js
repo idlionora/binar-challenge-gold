@@ -8,11 +8,9 @@ const Home = () => {
     return (
         <>
         <header>
-            <NavbarComp/>
             <BannerComp/>
         </header>
         <LandingPageComp/>
-        <FooterComp/>
         </>
     )
 }

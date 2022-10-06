@@ -4,12 +4,14 @@
   --c-primary-darkblue-04: #0D28A6;
   --c-primary-limegreen-03: #92D094;
   --c-primary-limegreen-04: #5CB85F;
+  --c-primary-limegreen-05: #3D7B3F;
   --c-alert-danger: #FA2C5A;
   --c-alert-warning: #F9CC00;
   --c-alert-success: #73CA5C;
   --c-neutral-blue: #F1F3FF;
   --c-neutral-02: #D0D0D0;
   --c-neutral-03: #8A8A8A;
+  --c-neutral-04: #3C3C3C;
   --c-neutral-05: #151515; 
 }
 
@@ -87,6 +89,11 @@ p {
   margin-bottom: 16px;
 }
 
+.mulai-sewa {
+  flex-grow: 0;
+  width: fit-content;
+}
+
 .green-button {
   padding: 8px 12px;
   border: none;
@@ -100,8 +107,165 @@ p {
   line-height: 1.42857;
 }
 
+.btn-primary.green-button:hover {
+  background-color: var(--c-alert-success);
+}
+
 header {
   width: 100%;
   background-color: var(--c-neutral-blue);
   position: relative;
+}
+
+.site-container {
+  height: 100%;;
+  width: 100%;
+  max-width: 75.5rem; /*1208px*/
+  margin: 0 auto;
+}
+
+
+/*---------- CariMobilComp ----------*/
+.cari-mobil_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0 16px;
+}
+
+.cari-mobil_form {
+  background-color: #fff;
+  width: 100%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, .15);
+  padding: 16px;
+  border-radius: 8px;  
+}
+
+.form-container {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.form-group {
+  width: 100%;
+}
+
+.form-label {
+  color: var(--c-neutral-04);
+  font-weight: 300;
+  font-size: .75rem;
+  line-height: 1.5;
+}
+
+.form-control {
+  background-color: #FFF;
+  font-size: .75rem;
+  line-height: 1.5;
+  padding: 8px 12px;
+  border: 1px solid var(--c-neutral-02);
+  border-radius: 2px;
+  color: var(--c-neutral-03);
+  text-align: left;
+}
+
+.form-select-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-control:after {
+  display: none;    
+}
+
+.form-control:focus {
+  border-color: var(--c-primary-limegreen-04);
+  box-shadow: none;
+}
+
+.form-control:focus .option-icon {
+  transition: transform 110ms ease-in-out;
+  transform: rotate(180deg);
+}
+
+.option-icon {
+  transition: transform 115ms ease-in-out;
+  transform: rotate(-0deg);
+}
+
+.form-group .btn-primary:hover {
+  background-color: #fff;
+  color: var(--c-neutral-03);
+  border-color: var(--c-primary-limegreen-04);
+}
+
+.form-group .btn-primary:focus {
+  border-color: var(--c-primary-limegreen-04);
+}
+
+.form-group .dropdown-menu {
+  padding: 0;
+  border-radius: 2px;
+  width: 100%;
+}
+
+.dropdown-option {
+  color: var(--c-neutral-04);
+  font-size: .75rem;
+  line-height: 1.5;
+  padding: 10px 11px;
+  font-weight: 300;
+}
+
+.dropdown-option:hover {
+  background-color: #C9E7CA;
+  font-weight: 700;
+  color: var(--c-primary-limegreen-04); 
+  font-style: bold;
+}
+
+.form-button {
+  width: 100%;
+  max-width: 16.5rem;  
+}
+
+@media screen and (min-width: 500px){
+  .form-group {
+    width: calc(50% - 8px);
+  }
+}
+
+/** DESKTOP STYLES **/
+@media screen and (min-width: 768px){
+  .page-container {
+    position: relative;
+    padding-top: 69px;
+    min-height: 147px
+  }
+
+  .cari-mobil_container {
+    padding: 0 20px;
+    position: absolute;
+    z-index: 5;    
+    margin-top: -72px;
+  }
+
+  .cari-mobil_form {
+    max-width: 65.5rem; /*1048px*/
+    padding: 24px;
+  }
+
+  .form-container {
+    flex-wrap: nowrap;
+  }
+
+  .form-group {
+    width: 100%;
+  }
+
+  .form-button {
+    max-width: 5.75rem;
+  }
 }
