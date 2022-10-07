@@ -1,5 +1,4 @@
 :root {
-
   --c-primary-darkblue-01:#CFD4ED;
   --c-primary-darkblue-04: #0D28A6;
   --c-primary-limegreen-03: #92D094;
@@ -124,111 +123,19 @@ header {
   margin: 0 auto;
 }
 
-
-/*---------- CariMobilComp ----------*/
-.cari-mobil_container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 0 16px;
+header.search-mode {
+  background-color: var(--c-neutral-blue);
+  height: 266px;
+  position: relative;
 }
 
-.cari-mobil_form {
-  background-color: #fff;
-  width: 100%;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, .15);
-  padding: 16px;
-  border-radius: 8px;  
-}
-
-.form-container {
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-end;
-  gap: 16px;
-}
-
-.form-group {
-  width: 100%;
-}
-
-.form-label {
-  color: var(--c-neutral-04);
-  font-weight: 300;
-  font-size: .75rem;
-  line-height: 1.5;
-}
-
-.form-control {
-  background-color: #FFF;
-  font-size: .75rem;
-  line-height: 1.5;
-  padding: 8px 12px;
-  border: 1px solid var(--c-neutral-02);
-  border-radius: 2px;
-  color: var(--c-neutral-03);
-  text-align: left;
-}
-
-.form-select-flex {
-  display: flex;
-  justify-content: space-between;
-}
-
-.form-control:after {
-  display: none;    
-}
-
-.form-control:focus {
-  border-color: var(--c-primary-limegreen-04);
-  box-shadow: none;
-}
-
-.form-control:focus .option-icon {
-  transition: transform 110ms ease-in-out;
-  transform: rotate(180deg);
-}
-
-.option-icon {
-  transition: transform 115ms ease-in-out;
-  transform: rotate(-0deg);
-}
-
-.form-group .btn-primary:hover {
-  background-color: #fff;
-  color: var(--c-neutral-03);
-  border-color: var(--c-primary-limegreen-04);
-}
-
-.form-group .btn-primary:focus {
-  border-color: var(--c-primary-limegreen-04);
-}
-
-.form-group .dropdown-menu {
-  padding: 0;
-  border-radius: 2px;
-  width: 100%;
-}
-
-.dropdown-option {
-  color: var(--c-neutral-04);
-  font-size: .75rem;
-  line-height: 1.5;
-  padding: 10px 11px;
-  font-weight: 300;
-}
-
-.dropdown-option:hover {
-  background-color: #C9E7CA;
-  font-weight: 700;
-  color: var(--c-primary-limegreen-04); 
-  font-style: bold;
-}
-
-.form-button {
-  width: 100%;
-  max-width: 16.5rem;  
+.hasil-pencarian_container {
+    width: 100%;
+    max-width: 68rem; /*1088px*/
+    padding: 30px 16px;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 16px;
 }
 
 @media screen and (min-width: 500px){
@@ -242,7 +149,7 @@ header {
   .page-container {
     position: relative;
     padding-top: 69px;
-    min-height: 147px
+    min-height: 147px;
   }
 
   .cari-mobil_container {
@@ -267,5 +174,16 @@ header {
 
   .form-button {
     max-width: 5.75rem;
+  }
+
+  .hasil-pencarian_container {
+    padding: 30px 20px;
+    padding-top: 80px; /*(40+40)px*/
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .hasil-pencarian_container.search-mode {
+    padding-top: 117px; /*(77+40)px*/
   }
 }

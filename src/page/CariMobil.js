@@ -1,10 +1,10 @@
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row } from 'react-bootstrap';
 import '../App.css';
 import { BannerComp } from '../components/Header';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-import { CariMobilComp } from '../components/CariMobilPageContent';
+import { CariMobilComp, HasilPencarianComp, HasilPencarianTab } from '../components/CariMobilPageContent';
 
 
 const CariMobil = () => {
@@ -32,7 +32,7 @@ const CariMobil = () => {
     getCarData()    
   }, []);  
 
-  const handleSubmitFilter = (submittedFilter) => {
+  function handleSubmitFilter(submittedFilter) {
     setChosenFilter(submittedFilter);
     setIsSearching(true);
   }
@@ -44,12 +44,17 @@ const CariMobil = () => {
 
     return (
       <>
-        <header>
-          <BannerComp noButton/>
+        <header className={!!isSearching ? "search-mode" : ""}>
+          {!isSearching && <BannerComp noButton/>}
         </header>
         <Container fluid className="site-container p-0 page-container">
           <Row className='cari-mobil_container'>
-            <CariMobilComp handleSubmitFilter={handleSubmitFilter}/>
+            {!isSearching ? 
+            <CariMobilComp handleSubmitFilter={handleSubmitFilter}/> :
+            <HasilPencarianComp chosenFilter={chosenFilter}/>}
+          </Row>
+          <Row className={`hasil-pencarian_container flex ${!!isSearching && "search-mode"}`}>
+            <HasilPencarianTab/>
           </Row>
         </Container>
       </>

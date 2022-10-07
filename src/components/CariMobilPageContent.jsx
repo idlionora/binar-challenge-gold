@@ -74,3 +74,91 @@ export const CariMobilComp = ({handleSubmitFilter}) => {
         </Form>
     )
 }
+
+export const HasilPencarianComp = ({chosenFilter}) => {
+    return (
+        <Form className="form cari-mobil_form">
+            <p className="search-mode_title">Hasil Pencarian</p>
+            <fieldset className="form-container flex">
+            <Form.Group className="form-group">
+                <Form.Label className="form-label">Nama Mobil</Form.Label>
+                <div className="search-mode_tab">{chosenFilter.name}</div>
+            </Form.Group>
+            <Form.Group className="form-group">
+                <Form.Label className="form-label">Kategori</Form.Label>
+                <div className="search-mode_tab">{chosenFilter.category}</div>
+            </Form.Group>
+            <Form.Group className="form-group">
+                <Form.Label className="form-label">Harga</Form.Label>
+                <div className="search-mode_tab">{chosenFilter.price}</div>
+            </Form.Group>
+            <Form.Group className="form-group">
+                <Form.Label className="form-label">Status</Form.Label>
+                <div className="search-mode_tab">{!chosenFilter.status ? "Disewa": "Tidak Disewa"}</div>
+            </Form.Group>
+            <button className="search-mode_button"><b>Edit</b></button>
+            </fieldset>
+        </Form>
+    )
+}
+
+export const HasilPencarianTab = () => {
+    return (
+        <>
+        <div className="hasil-pencarian_tab flex-column">
+            <div className="hasil-pencarian_pic">
+                <img src={require("../assets/car-1.png")} alt="Car Picture" className="hasil-pencarian_img" />
+            </div>
+            <div className="hasil-pencarian_text">
+                <p className="hasil-pencarian_name">Innova</p>
+                <p className="hasil-pencarian_price">Rp 500.000 / hari</p>
+                <p className="hasil-pencarian_desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <Button className="green-button hasil-pencarian_button">Pilih Mobil</Button></div>
+            </div>
+        <div className="hasil-pencarian_tab flex-column">
+            <div className="hasil-pencarian_pic">
+                <img src={require("../assets/car-2.png")} alt="Car Picture" className="hasil-pencarian_img" />
+            </div>
+            <div className="hasil-pencarian_text">
+                <p className="hasil-pencarian_name">Innova</p>
+                <p className="hasil-pencarian_price">Rp 500.000 / hari</p>
+                <p className="hasil-pencarian_desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <Button className="green-button hasil-pencarian_button">Pilih Mobil</Button>
+            </div>
+        </div>
+        <div className="hasil-pencarian_tab flex-column">
+            <div className="hasil-pencarian_pic">
+                <img src={require("../assets/car-3.png")} alt="Car Picture" className="hasil-pencarian_img" />
+            </div>
+            <div className="hasil-pencarian_text">
+                <p className="hasil-pencarian_name">Innova</p>
+                <p className="hasil-pencarian_price">Rp 500.000 / hari</p>
+                <p className="hasil-pencarian_desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <Button className="green-button hasil-pencarian_button">Pilih Mobil</Button>
+            </div>
+        </div>
+        <div className="hasil-pencarian_tab flex-column">
+            <div className="hasil-pencarian_pic">
+                <img src={require("../assets/car-2.png")} alt="Car Picture" className="hasil-pencarian_img" />
+            </div>
+            <div className="hasil-pencarian_text">
+                <p className="hasil-pencarian_name">Innova</p>
+                <p className="hasil-pencarian_price">Rp 500.000 / hari</p>
+                <p className="hasil-pencarian_desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <Button className="green-button hasil-pencarian_button">Pilih Mobil</Button>
+            </div>
+        </div>
+        <div className="hasil-pencarian_tab flex-column">
+            <div className="hasil-pencarian_pic">
+                <img src={require("../assets/car-3.png")} alt="Car Picture" className="hasil-pencarian_img" />
+            </div>
+            <div className="hasil-pencarian_text">
+                <p className="hasil-pencarian_name">Innova</p>
+                <p className="hasil-pencarian_price">Rp 500.000 / hari</p>
+                <p className="hasil-pencarian_desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <Button className="green-button hasil-pencarian_button">Pilih Mobil</Button>
+            </div>
+        </div>
+        </>
+    )
+}
