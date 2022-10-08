@@ -2,6 +2,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 const iconOption = require("../assets/chevron-down.png");
 import Dropdown from 'react-bootstrap/Dropdown';
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import './CariMobilPageContent.css'
 
@@ -11,7 +12,7 @@ export const CariMobilComp = ({handleSubmitFilter}) => {
     const [price, setPrice] = useState("")
     const [status, setStatus] = useState(false);
     return (
-        <Form className="form cari-mobil_form">
+        <Form className="cari-mobil_form">
             <fieldset className="form-container flex">
                 <Form.Group className="form-group">
                     <Form.Label className="form-label">Nama Mobil</Form.Label>
@@ -75,9 +76,9 @@ export const CariMobilComp = ({handleSubmitFilter}) => {
     )
 }
 
-export const HasilPencarianComp = ({chosenFilter}) => {
+export const HasilPencarianComp = ({chosenFilter, handleEditFilter}) => {
     return (
-        <Form className="form cari-mobil_form">
+        <Form className="cari-mobil_form search-mode_form">
             <p className="search-mode_title">Hasil Pencarian</p>
             <fieldset className="form-container flex">
             <Form.Group className="form-group">
@@ -94,71 +95,58 @@ export const HasilPencarianComp = ({chosenFilter}) => {
             </Form.Group>
             <Form.Group className="form-group">
                 <Form.Label className="form-label">Status</Form.Label>
-                <div className="search-mode_tab">{!chosenFilter.status ? "Disewa": "Tidak Disewa"}</div>
+                <div className="search-mode_tab">
+                    {!chosenFilter.status ? "Disewakan": "Tidak Disewa"}
+                    {!chosenFilter.status && <img src={require("../assets/check-circle-status.png")} alt="Disewakan" className="check-status-img"/>}
+                </div>
             </Form.Group>
-            <button className="search-mode_button"><b>Edit</b></button>
+            <button type="button" className="search-mode_button"
+            onClick={() => handleEditFilter()}><b>Edit</b></button>
             </fieldset>
         </Form>
     )
 }
 
-export const HasilPencarianTab = () => {
+export const PencarianmuComp = () => {
     return (
-        <>
+        <Form className="cari-mobil_form search-mode_form disable">
+            <p className="search-mode_title">Pencarianmu</p>
+            <fieldset className="form-container flex">
+                <Form.Group className="form-group">
+                    <Form.Label className="form-label">Nama Mobil</Form.Label>
+                    <div className="search-mode_tab"></div>
+                </Form.Group>
+                <Form.Group className="form-group">
+                    <Form.Label className="form-label">Kategori</Form.Label>
+                    <div className="search-mode_tab"></div>
+                </Form.Group>
+                <Form.Group className="form-group">
+                    <Form.Label className="form-label">Harga</Form.Label>
+                    <div className="search-mode_tab"></div>
+                </Form.Group>
+                <Form.Group className="form-group">
+                    <Form.Label className="form-label">Status</Form.Label>
+                    <div className="search-mode_tab"></div>
+                </Form.Group>
+            </fieldset>
+        </Form>
+
+    )
+}
+
+export const HasilPencarianTab = ({carData}) => {
+    const navigate = useNavigate()
+    return (
         <div className="hasil-pencarian_tab flex-column">
             <div className="hasil-pencarian_pic">
-                <img src={require("../assets/car-1.png")} alt="Car Picture" className="hasil-pencarian_img" />
+                <img src={carData.image} alt={carData.name} className="hasil-pencarian_img" />
             </div>
             <div className="hasil-pencarian_text">
-                <p className="hasil-pencarian_name">Innova</p>
-                <p className="hasil-pencarian_price">Rp 500.000 / hari</p>
+                <p className="hasil-pencarian_name">{carData.name}</p>
+                <p className="hasil-pencarian_price">Rp {carData.price.toLocaleString("id-ID")} / hari</p>
                 <p className="hasil-pencarian_desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <Button className="green-button hasil-pencarian_button">Pilih Mobil</Button></div>
-            </div>
-        <div className="hasil-pencarian_tab flex-column">
-            <div className="hasil-pencarian_pic">
-                <img src={require("../assets/car-2.png")} alt="Car Picture" className="hasil-pencarian_img" />
-            </div>
-            <div className="hasil-pencarian_text">
-                <p className="hasil-pencarian_name">Innova</p>
-                <p className="hasil-pencarian_price">Rp 500.000 / hari</p>
-                <p className="hasil-pencarian_desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <Button className="green-button hasil-pencarian_button">Pilih Mobil</Button>
-            </div>
+                <Button className="green-button hasil-pencarian_button"
+                onClick={() => navigate(`/detail-mobil/${carData.id}`, {replace: true})}>Pilih Mobil</Button></div>
         </div>
-        <div className="hasil-pencarian_tab flex-column">
-            <div className="hasil-pencarian_pic">
-                <img src={require("../assets/car-3.png")} alt="Car Picture" className="hasil-pencarian_img" />
-            </div>
-            <div className="hasil-pencarian_text">
-                <p className="hasil-pencarian_name">Innova</p>
-                <p className="hasil-pencarian_price">Rp 500.000 / hari</p>
-                <p className="hasil-pencarian_desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <Button className="green-button hasil-pencarian_button">Pilih Mobil</Button>
-            </div>
-        </div>
-        <div className="hasil-pencarian_tab flex-column">
-            <div className="hasil-pencarian_pic">
-                <img src={require("../assets/car-2.png")} alt="Car Picture" className="hasil-pencarian_img" />
-            </div>
-            <div className="hasil-pencarian_text">
-                <p className="hasil-pencarian_name">Innova</p>
-                <p className="hasil-pencarian_price">Rp 500.000 / hari</p>
-                <p className="hasil-pencarian_desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <Button className="green-button hasil-pencarian_button">Pilih Mobil</Button>
-            </div>
-        </div>
-        <div className="hasil-pencarian_tab flex-column">
-            <div className="hasil-pencarian_pic">
-                <img src={require("../assets/car-3.png")} alt="Car Picture" className="hasil-pencarian_img" />
-            </div>
-            <div className="hasil-pencarian_text">
-                <p className="hasil-pencarian_name">Innova</p>
-                <p className="hasil-pencarian_price">Rp 500.000 / hari</p>
-                <p className="hasil-pencarian_desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <Button className="green-button hasil-pencarian_button">Pilih Mobil</Button>
-            </div>
-        </div>
-        </>
     )
 }

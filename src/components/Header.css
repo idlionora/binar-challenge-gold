@@ -151,7 +151,10 @@
     align-items: center;
     position: absolute;
     z-index: 96;
-    margin: 0 auto;
+    margin: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
 }
 
 .logo-img {

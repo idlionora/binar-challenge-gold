@@ -111,16 +111,28 @@
 }
 
 /*---------- HasilPencarianComp ----------*/
+.search-mode_form {
+  margin-top: 16px;
+}
+
 .search-mode_tab {
   padding: 9px 12px;
   border: 1px solid #222222;
   width: 100%;
+  min-height: calc(1.125rem + 20px);
   font-weight: 300;
   font-size: 0.75rem;
   line-height: 1.5;
   border-radius: 2px;
   overflow-x: hidden;
   white-space: nowrap;
+  position: relative;
+}
+
+.check-status-img {
+  position: absolute;
+  right: 10.5px;
+
 }
 
 .search-mode_button {
@@ -132,6 +144,14 @@
   color: var(--c-primary-darkblue-04);
 }
 
+/*---------- PencarianmuComp ----------*/
+.search-mode_form.disable .form-label {
+  color: var(--c-neutral-03);
+}
+.search-mode_form.disable .search-mode_tab {
+  background-color: var(--c-neutral-02);
+  border: none;
+}
 /*---------- HasilPencarianTab ----------*/
 .hasil-pencarian_tab {
   background-color: #fff;
@@ -207,6 +227,11 @@
   
   .form-button {
     max-width: 5.75rem;
+  }
+
+  /*---------- HasilPencarianComp ----------*/
+  .search-mode_form {
+    margin-top: 0;
   }
 
   /*---------- HasilPencarianTab ----------*/
