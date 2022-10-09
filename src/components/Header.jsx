@@ -47,9 +47,9 @@ const HamburgerMenuComp = () => {
         onClick={handleMenu}>
             <p className="pop-menu_title">BCR</p>
             <Link to="/#our_services" className="pop-link">Our Services</Link>
-            <Link to="/#why_us" className="pop-link">Why Us</Link>
-            <Link to="/#testimonial" className="pop-link">Testimonial</Link>
-            <Link to="/#faq" className="pop-link">FAQ</Link>
+            <a href="/#why_us" className="pop-link">Why Us</a>
+            <a href="/#testimonial" className="pop-link">Testimonial</a>
+            <a href="/#faq" className="pop-link">FAQ</a>
         </div>      
         </>
     )
@@ -65,9 +65,9 @@ export const NavbarComp = () => {
             </Link>
             <ul className="nav-container flex hide-for-mobile">
                 <li><Link to="/#our_services" className="nav-link">Our Services</Link></li>
-                <li><Link to="/#why_us" className="nav-link">Why Us</Link></li>
-                <li><Link to="/#testimonial" className="nav-link">Testimonial</Link></li>
-                <li><Link to="/#faq" className="nav-link">FAQ</Link></li>                
+                <li><a href="/#why_us" className="nav-link">Why Us</a></li>
+                <li><a href="/#testimonial" className="nav-link">Testimonial</a></li>
+                <li><a href="/#faq" className="nav-link">FAQ</a></li>                
             </ul>
         </nav>  
         </>

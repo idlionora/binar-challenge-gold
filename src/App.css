@@ -110,6 +110,7 @@ p {
   background-color: var(--c-alert-success);
 }
 
+/*Cari Mobil Page*/
 header {
   width: 100%;
   background-color: var(--c-neutral-blue);
@@ -140,6 +141,86 @@ header.search-mode {
 
 .hasil-pencarian_container.detail-mode {
   padding-top: 0;
+}
+
+/*Detail Mobil Page*/
+.cari-mobil_tabs {
+  width: 100%;
+  max-width: 68rem; /*1088px*/;
+  margin: 0 auto;
+  padding: 30px 16px 10px;
+}
+
+.car-detail_text, 
+.car-detail_fetched {
+  margin-bottom: 20px;
+}
+
+.car-detail_border {
+  width: 100%;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.car-detail_img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 3px;
+  align-self: center;
+  margin-bottom: 24px;
+}
+
+.car-detail_icon {
+  width: 12px;
+  height: 12px;
+  margin-right: 4px;
+}
+
+.car-category_container,
+.car-price_container {
+  margin-bottom: 55px;
+}
+
+.car-detail_category {
+  font-size: 0.625rem;
+  line-height: 1.4;
+}
+
+.car-price_container {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.car-price_container p {
+  margin-bottom: 4px;
+}
+
+/*element that has same value as normal p format but 
+would be beneficial to be written for navigation purpose */
+h3 {
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.42857;
+  color: #000;
+  margin-bottom: 16px;
+}
+
+h4 {
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.42857;
+  color: #000;
+  margin-bottom: 8px;
+}
+/**/
+
+.car-detail_list {
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.75;
+  color:var(--c-neutral-03);
+  margin-bottom: 16px;
 }
 
 @media screen and (min-width: 500px){
@@ -179,7 +260,8 @@ header.search-mode {
   .form-button {
     max-width: 5.75rem;
   }
-  
+ 
+  /*Cari Mobil Page*/
   header.search-mode {
     height: 266px;
   }
@@ -198,4 +280,19 @@ header.search-mode {
   .hasil-pencarian_container.detail-mode {
     padding-top: 77px;
   }
+  
+  /*Detail Mobil Page*/
+  .cari-mobil_tabs {
+    padding: 30px 20px 10px;
+    padding-top: 107px;
+  }
+
+  .car-detail_text {
+    padding-right: 15px;
+  }
+  
+  .car-detail_fetched {
+    padding-left: 15px;
+  }
+  
 }
