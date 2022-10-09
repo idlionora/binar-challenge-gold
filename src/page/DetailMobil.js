@@ -5,6 +5,7 @@ import { PencarianmuComp } from '../components/CariMobilPageContent';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import iconUsers from "../assets/users-icon.png";
 
 const CariMobilConfirmed = () => {
     const {id} = useParams();
@@ -39,7 +40,7 @@ const CariMobilConfirmed = () => {
                     <img src={carData.image} alt={carData.name} className="car-detail_img"/>
                     <h4 className="car-detail_name" style={{marginBottom: "2px"}}>{carData.name}</h4>
                     <div className="flex car-category_container">
-                        <img src={require("../assets/users-icon.png")} className="car-detail_icon" alt="category"/>
+                        <img src={iconUsers} className="car-detail_icon" alt="category"/>
                         <p className="car-detail_category">{carData.category}</p>
                     </div>
                     <div className="flex car-price_container">

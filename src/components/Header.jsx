@@ -2,6 +2,7 @@ import {useState} from "react";
 import Button from 'react-bootstrap/Button';
 import { Link, useNavigate } from "react-router-dom";
 import './Header.css';
+import bannerImg from "../assets/Mercedes Car EQC 300kW Edition - 900x598.png";
 
 const HamburgerMenuComp = () => {
     //to change burger classes
@@ -89,7 +90,7 @@ export const BannerComp = (props) => {
                     <div className={`car-pic_space ${props.noButton && "search-page-pb"}`}></div>
                     <div className="car-pic_container">
                         <div className="blue-curve"></div>
-                        <img src={require("../assets/Mercedes Car EQC 300kW Edition - 900x598.png")} alt="Mercedes Car" id="banner-car" />
+                        <img src={bannerImg} alt="Mercedes Car" id="banner-car" />
                     </div>
                 </div>
             </div>

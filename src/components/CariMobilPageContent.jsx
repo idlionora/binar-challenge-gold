@@ -1,10 +1,11 @@
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-const iconOption = require("../assets/chevron-down.png");
 import Dropdown from 'react-bootstrap/Dropdown';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import './CariMobilPageContent.css'
+import iconOption from '../assets/chevron-down.png';
+import iconCheckCircle from "../assets/check-circle-status.png"
 
 export const CariMobilComp = ({handleSubmitFilter}) => {
     const [name, setName] = useState("");
@@ -97,7 +98,7 @@ export const HasilPencarianComp = ({chosenFilter, handleEditFilter}) => {
                 <Form.Label className="form-label">Status</Form.Label>
                 <div className="search-mode_tab">
                     {!chosenFilter.status ? "Disewakan": "Tidak Disewa"}
-                    {!chosenFilter.status && <img src={require("../assets/check-circle-status.png")} alt="Disewakan" className="check-status-img"/>}
+                    {!chosenFilter.status && <img src={iconCheckCircle} alt="Disewakan" className="check-status-img"/>}
                 </div>
             </Form.Group>
             <button type="button" className="search-mode_button"

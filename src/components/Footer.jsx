@@ -1,7 +1,11 @@
 import '../App.css';
 import './Footer.css';
 import { Link } from "react-router-dom";
-
+import iconFacebook from "../assets/icon_facebook.png";
+import iconInstagram from "../assets/icon_instagram.png";
+import iconTwitter from "../assets/icon_twitter.png";
+import iconMail from "../assets/icon_mail.png";
+import iconTwitch from "../assets/icon_twitch.png";
 
 export const FooterComp = () => {
     return (
@@ -21,22 +25,19 @@ export const FooterComp = () => {
                 <p>Connect with us</p>
                 <div className="connect-link_container flex">
                     <a href="#" target="_blank">
-                    <img src={require("../assets/icon_facebook.png")} alt="Facebook" className="connect-link"/>
+                    <img src={iconFacebook} alt="Facebook" className="connect-link"/>
                     </a>
                     <a href="#" target="_blank">
-                    <img src={require("../assets/icon_instagram.png")} alt="Instagram" className="connect-link"/>
+                    <img src={iconInstagram} alt="Instagram" className="connect-link"/>
                     </a>
                     <a href="#" target="_blank">
-                    <img src={require("../assets/icon_twitter.png")} alt="Twitter" className="connect-link"/>
+                    <img src={iconTwitter} alt="Twitter" className="connect-link"/>
                     </a>
                     <a href="#" target="_blank">
-                    <img src={require("../assets/icon_mail.png")} alt="Mail" className="connect-link"/>
+                    <img src={iconMail} alt="Mail" className="connect-link"/>
                     </a>
                     <a href="#" target="_blank">
-                    <img src={require("../assets/icon_twitch.png")} alt="Twitch" className="connect-link"/>
-                    </a>
-                    <a href="#" target="_blank">
-                    <img src={require("../assets/icon_facebook.png")} alt="Facebook" className="connect-link"/>
+                    <img src={iconTwitch} alt="Twitch" className="connect-link"/>
                     </a>
                 </div>
             </div>

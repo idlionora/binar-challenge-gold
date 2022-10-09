@@ -1,12 +1,13 @@
 import React, {useState} from "react";
 import './Carousel.css';
 
-
-const profileImg1 = [require("../assets/img_jonno.png")];
-const profileImg2 = [require("../assets/img_jenny.png")];
+import profileImg1 from "../assets/img_jonno.png";
+import profileImg2 from "../assets/img_jenny.png";
+import iconStar from "../assets/rating-star.png";
+import iconButtonArrow from "../assets/button-arrow.png";
 
 const CarouselCardComp = (props) => {
-    const ratingStar = <img src={require("../assets/rating-star.png")} alt="Rating" className="img-star"/>;
+    const ratingStar = <img src={iconStar} alt="Rating" className="img-star"/>;
 
     //toggle slide position
     const currentSlidePosition = props.position[0]
@@ -111,9 +112,9 @@ export const CarouselComp = () => {
             </div>
             <div className="carousel_buttons flex">
                 <button className={`carousel-button button-left ${!!disableLeft && "disable"}`} onClick={toggleLeft}>
-                    <img src={require("../assets/button-arrow.png")} alt="slide left" className="arrow-filter"/></button>
+                    <img src={iconButtonArrow} alt="slide left" className="arrow-filter"/></button>
                 <button className={`carousel-button button-right ${!!disableRight && "disable"}`} onClick={toggleRight}>
-                    <img src={require("../assets/button-arrow.png")} alt="slide right" className="arrow-filter"/></button>
+                    <img src={iconButtonArrow} alt="slide right" className="arrow-filter"/></button>
             </div>           
         </div>
     )

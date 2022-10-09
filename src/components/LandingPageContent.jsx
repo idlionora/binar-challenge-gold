@@ -4,27 +4,28 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Dropdown from 'react-bootstrap/Dropdown';
-const iconDropdown = require("../assets/dropdown.png")
 import './LandingPageContent.css';
 import { CarouselComp } from "./Carousel";
 import { useNavigate } from 'react-router-dom';
 
+import iconDropdown from "../assets/dropdown.png";
+import iconChecklist from "../assets/checklist.png";
 
 const ChecklistComp = (props) => {
     return (
         <div className="checklist flex">
             <div className="check-circle flex">
-                <img src={require("../assets/checklist.png")} alt="Checklist" className="check-pic" /> 
+                <img src={iconChecklist} alt="Checklist" className="check-pic" /> 
             </div>
             <p>{props.content}</p>            
         </div>
     )
 }
 
-const iconThumb = require("../assets/icon_thumb.png");
-const iconPrice = require("../assets/icon_price.png");
-const iconHrs = require("../assets/icon_24hrs.png");
-const iconProfessional = require("../assets/icon_professional.png");  
+import iconThumb from "../assets/icon_thumb.png";
+import iconPrice from "../assets/icon_price.png";
+import iconHrs from "../assets/icon_24hrs.png";
+import iconProfessional from "../assets/icon_professional.png";  
 
 const CardComp = (props) => {  
     return (
@@ -54,6 +55,7 @@ const DropdownComp = (props) => {
     )
 }
 
+import serviceImg from "../assets/service-img.png"; 
 export const LandingPageComp = () => {
     const navigate = useNavigate();
     return (
@@ -62,7 +64,7 @@ export const LandingPageComp = () => {
             <Row id="our_services">
                 <Col md={6} className="service-pic_container flex-column">
                     <div className="service-pic">
-                    <img src={require("../assets/service-img.png")} alt="Happy Girl" id="service-img" />                   
+                    <img src={serviceImg} alt="Happy Girl" id="service-img" />                   
                     </div>
                 </Col>
                 <Col md={6} className="service-text_container flex-column">
